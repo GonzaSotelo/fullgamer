@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('partials/head') %>
+
+  <body class="productlist">
+    <%- include("partials/header") %>
+
+    <div class="banner_categoria">
+      <img src="/img/<%= category.banner %>" alt="" />
+      <h1 class="categoria_titulo"><%= category.name %></h1>
+
+      <p class="categoria_parrafo"><%= category.parrafo %></p>
+    </div>
+
+    <div class="categoria_opciones">
+        <div class="categoria_1">
+            <img src="/img/<%= category.image2 %>" alt="" />
+        </div>
+        
+        <div class="categoria_2">
+            <img src="/img/<%= category.image3 %>" alt="" />
+        </div>
+    </div>
+
+    <div class="categoria_opciones2">
+      <div class="categoria_3">
+        <img src="/img/<%= category.image4 %>" alt="" />
+    </div>
+    <div class="categoria_4">
+      <img src="/img/<%= category.image5 %>" alt="" />
+  </div>
+    </div>
+
+<div class="categoriacarrusel">
+    <%- include("partials/carousel-home") %> <%- include('partials/footer') %>
+</div>
+    
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partials/headBoost") %>
+
+    <body class="body_add">
+
+        <%- include("partials/header") %>
+            <!-- <div class= "container col-md-8 my-5 text-center" > -->
+                <div class = "div_container">
+                <form action="" method="POST" enctype="multipart/form-data" id="formProductCreate">
+                    <div class="row" >
+                        <div class="col-md-6">
+                            <label for="category" class="form-label">Seleccione una categoría</label>
+                            <select class="form-select <%= locals.errors && (errors.category && 'is-invalid') %>" id="category" name="category">
+                                <option value="" selected hidden>seleccione...</option>
+                                <% categories.forEach(category => { %>
+                                    <option value="<%= category.id %>"><%= category.name %></option>
+                                <% }) %>
+                            </select>
+                            <small id="msgError-category" class="ms-2 text-danger"><%= locals.errors && (errors.category && errors.category.msg) %></small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="image" class="form-label">Agregar imagen</label>
+                            <input class="form-control" type="file" id="image" name="image">
+                            <small id="msgError-image" class="ms-2 text-danger"><%= locals.errors && (errors.image && errors.image.msg) %></small>
+                        
+                            <div id="imagePreviewContainer" class="mt-2" style="display: none;">
+                                <img id="imagePreview" style="width: 100px; height: 100px; border: 1px solid #000000;" alt="Vista previa de la imagen">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control <%= locals.errors && (errors.name && 'is-invalid') %>" id="name" name="name" value="<%= locals.old && (old.name && old.name) %>">
+                        <small id="msgError-name" class="ms-2 text-danger"><%= locals.errors && (errors.name && errors.name.msg) %></small>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="brand" class="form-label">Marcas</label>
+                            <select class="form-select <%= locals.errors && (errors.brand && 'is-invalid') %>" id="brand" name="brand">
+                                <option value="" selected hidden>seleccione...</option>
+                                <% marca.forEach(item => { %>
+                                    <option value="<%= item.id %>"><%= item.name %></option>
+                                <% }) %>
+                            </select>
+                            <small id="msgError-brand" class="ms-2 text-danger"><%= locals.errors && (errors.brand && errors.brand.msg) %></small>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="model" class="form-label">Modelo</label>
+                            <input type="text" class="form-control <%= locals.errors && (errors.model && 'is-invalid') %>" id="model" name="model">
+                            <small id="msgError-model" class="ms-2 text-danger"><%= locals.errors && (errors.model && errors.model.msg) %></small>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="amount" class="form-label">Cantidad Stock</label>
+                            <input type="number" class="form-control <%= locals.errors && (errors.amount && 'is-invalid') %>" id="amount" name="amount">
+                            <small id="msgError-amount" class="ms-2 text-danger"><%= locals.errors && (errors.amount && errors.amount.msg) %></small>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Descripción</label>
+                        <textarea class="form-control <%= locals.errors && (errors.description && 'is-invalid') %>" id="description" rows="3" name="description"></textarea>
+                        <small id="msgError-description" class="ms-2 text-danger"><%= locals.errors && (errors.description && errors.description.msg) %></small>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="price" class="form-label">Precio</label>
+                            <input type="number" class="form-control <%= locals.errors && (errors.price && 'is-invalid') %>" id="price" name="price">
+                            <small id="msgError-price" class="ms-2 text-danger"><%= locals.errors && (errors.price && errors.price.msg) %></small>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="discount" class="form-label">Descuento</label>
+                            <input type="number" class="form-control" id="discount" name="discount">
+                        </div>
+                    </div>
+                    <small  id="msgError-empty"  class="ms-2 text-danger"></small>
+                    <button type="submit" class="btn btn-primary float-end mt-4">Guardar</button>
+                    <a href="/users/admin" class="btn btn-danger float-end mt-4" style="margin-right: 10px;">Cancelar</a>
+                </form>
+                    
+            </div>
+            <script src="/javascripts/validationCreate.js"></script>
+
+    </body>
+
+</html>

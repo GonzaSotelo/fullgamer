@@ -1,0 +1,48 @@
+<div class="profileInit">
+    <div class="profileInit_contenedor">
+        
+        <div class="profileInit_contenedor_image">
+            <% if (profile.image) { %>
+                <img src="/img/<%= profile.image %>" class="" alt="...">
+            <% } else { %>
+                <!-- Ruta de la imagen por defecto si no hay imagen en el perfil -->
+                <img src="/img/sin-imagen.jpg" class="" alt="...">
+            <% } %>
+        </div>
+
+        <div class="profileInit_contenedor_email">
+            <p class=""><%= profile.email %></p>
+        </div>
+        <div class="profileInit_contenedor_contenedorButton_button">
+            <div class="profileInit_contenedor_contenedorButton_button_comprar">
+                <a href="" class="">Mis compras</a>
+            </div>
+            <div class="profileInit_contenedor_contenedorButton_button_configuracion">
+                <a href="/users/profile/<%= profile.id %>" class=""></a>
+                <p>Configuracion</p>
+            </div>
+           
+            
+            <% if (profile.rolId === 1) { %>
+                <a href="/users/admin" class="">
+                <div class="profileInit_contenedor_contenedorButton_button_salir">
+                <p>Admin</p>
+                </div>
+            </a>
+            <a href="http://localhost:5173" class="">
+                <div class="profileInit_contenedor_contenedorButton_button_salir">
+                <p>Dashboard</p>
+                </div>
+            </a>
+            <% }else { %> 
+                <p></p> 
+            <% } %>
+        </div>
+        <a href="/users/logout" class="">
+            <div class="profileInit_contenedor_contenedorButton_button_salir">
+                
+                <p>Salir</p>
+            </a>
+            </div>
+    </div>
+</div>

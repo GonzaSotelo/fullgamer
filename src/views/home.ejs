@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("partials/head") %>
+
+
+<body>
+    
+    <%- include("partials/header") %>
+     
+
+    <!----------------------------login-------------------------------------------------->
+    <%- include("partials/login", {viewError2:"/#modal"}) %>
+    
+    
+    <!--------------------------REGISTRO------------------------------------------------->
+    <%- include("partials/register", {view:"/#register"}) %>
+    
+    <!----------------------------nav-bar ------------------------------------------------->
+    <%- include("partials/modal-cel") %>
+   
+    <%- include("partials/header-nav") %>
+
+    
+
+    <%- include("partials/banner-swipe") %>
+    
+    <section class="padre-marcas">
+        <h2 id="marcas" >NUESTRAS MARCAS</h2>
+        <div class="padre-carrusel-marcas">
+            <div class="carrusel-marcas">
+                
+                
+
+<%- include("partials/marcas") %>
+
+</div>
+</div>
+</section>
+
+    <main class="home">
+
+
+
+
+            <aside class="banner-izquierdo">
+                <img src="/img/banner-vertical-1.png" alt="">
+            </aside>
+
+            
+
+        <div class="main-contenido">
+        
+
+      
+
+        <section>
+            <h2 id="ofertas">PRODUCTOS DESTACADOS</h2>
+        
+        <%- include("partials/product") %>
+
+        </section>
+
+        
+        
+        <h2 id="productos">LOS MAS VISTOS</h2>
+
+        <%- include("partials/carousel-home") %>
+
+
+        <div class="home_box">
+         
+            <h2 id="categorias">CATEGORIAS</h2>
+            <div class="home_box_category">
+                <div class="home_box_category_one">
+                    <div class="home_box_category_one_uno">
+                        <div class="home_box_category_one_uno_primera">
+                            <img src="/img/categorias/accesorios.jpg" alt="">
+                            <a class="mensaje-categoria1" href="http://localhost:3000/products/productList/7">Accesorios</a>
+                        </div>
+                        <div class="home_box_category_caja">
+                            <div class="home_box_category_one_uno_segunda">
+                                <img src="/img/categorias/ram.jpg" alt="">
+                                <a class="mensaje-categoria2" href="http://localhost:3000/products/productList/2">Ram</a>
+                            </div>
+                            <div class="home_box_category_one_uno_tercera">
+                                <img src="/img/categorias/notebook.jpg" alt="">
+                                <a class="mensaje-categoria3" href="http://localhost:3000/products/productList/8">Notebook</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home_box_category_one_dos">
+                        <div class="home_box_category_one_dos_primera">
+                            <img src="/img/categorias/placadevideo.jpg" alt="">
+                            <a class="mensaje-categoria4" href="http://localhost:3000/products/productList/11">Placas De Videos</a>
+                        </div>
+                        <div class="home_box_category_caja">
+                            <div class="home_box_category_one_dos_segunda">
+                                <img src="/img/categorias/monitor.jpg" alt="">
+                                <a class="mensaje-categoria5" href="http://localhost:3000/products/productList/6">Monitor</a>
+                            </div>
+                            <div class="home_box_category_one_dos_tercera">
+                                <img src="/img/categorias/perifericos.jpg" alt="">
+                                <a class="mensaje-categoria6" href="http://localhost:3000/products/productList/10">Perifericos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="home_box_category_two">
+                    <div class="home_box_category_two_primera">
+                        <div class="home_box_category_two_primera_uno">
+                            <a href="http://localhost:3000/products/productList/1"><img src="/img/categorias/discoduro.jpg" alt=""></a>
+                            <a class="mensaje-categoria7" href="http://localhost:3000/products/productList/1">Almacenamiento</a>
+                        </div>
+                        <div class="home_box_category_caja">
+                            <div class="home_box_category_two_primera_dos">
+                                <img src="/img/categorias/motherboard.jpg" alt="">
+                                <a class="mensaje-categoria8" href="http://localhost:3000/products/productList/4">Motherboard</a>
+                            </div>
+                            <div class="home_box_category_two_primera_tres">
+                                <img src="/img/categorias/cooler.jpg" alt="">
+                                <a class="mensaje-categoria9" href="http://localhost:3000/products/productList/5">Coolers</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home_box_category_two_segunda">
+                        <div class="home_box_category_two_segunda_uno">
+                            <img src="/img/categorias/gabinete.jpg" alt="">
+                            <a class="mensaje-categoria10" href="http://localhost:3000/products/productList/9">Gabinetes</a>
+                        </div>
+                        <div class="home_box_category_caja">
+                            <div class="home_box_category_two_segunda_dos">
+                                <img src="/img/categorias/fuente.jpg" alt="">
+                                <a class="mensaje-categoria11" href="http://localhost:3000/products/productList/12">Fuentes</a>
+                            </div>
+                            <div class="home_box_category_two_segunda_tres">
+                                <img src="/img/categorias/cpu.jpg" alt="">
+                                <a class="mensaje-categoria12" href="http://localhost:3000/products/productList/3">Cpu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 id="esponsor"> NUESTROS SPONSORS</h2>
+            <br>
+            <div class="home_box_brand">
+               
+
+                    <div class="home_box_brand_caja">
+                        <div class="home_box_brand_razer">
+                            <div class="home_box_brand_razer_img"><a href="/brandrazer"><img src="/img/razer22.jpg" alt=""></a></div>
+                            
+                        </div>
+                        <div class="home_box_brand_corzair">
+                            <div class=""><a href="/brandcorzair"><img src="/img/corsair22.jpg" alt=""></a></div>
+                           
+                        </div>
+                        <div class="home_box_brand_aorus">
+                            <div><a href="/brandaorus"><img src="/img/aorus2.webp" alt=""></a></div>
+                            
+                        </div>
+    
+                    </div>
+            </div>
+        </div>
+        <section>
+            
+            
+            <article class="padre-carrusel">
+                <!-- <div class="carrusel"-->
+
+     
+            </article>
+            </div>
+        </section>
+        </div>
+            
+                <aside class="banner-izquierdo">
+                    <img src="/img/banner-vertical2222.png" alt="">
+                </aside>
+            
+
+    </main>
+
+
+    <!----------------------------FOOTER-------------------------------------------------->
+    <%- include('partials/footer') %>
+    
+    <script src="/js/validacionesRegister.js"></script>
+</body>
+</html>
